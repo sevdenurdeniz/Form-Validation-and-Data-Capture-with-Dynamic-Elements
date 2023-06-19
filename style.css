@@ -1,0 +1,44 @@
+#previewImage{
+    position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.fotoLabel{
+    position: relative;
+    background: #f6f6f6;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #88888845;
+    color: #888888;
+}
+.fotoLabel span{
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.fotoLabel i{
+    display: block;
+    font-size: 40px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+ .invalidInput{
+    border: 1px solid red;
+    box-shadow: 0 0 0 0.2rem rgb(255 0 0 / 46%);
+ }
+ .invalidAdres{
+    border: 1px solid red;
+    box-shadow: 0 0 0 0.2rem rgb(255 0 0 / 46%);
+ }
+ 

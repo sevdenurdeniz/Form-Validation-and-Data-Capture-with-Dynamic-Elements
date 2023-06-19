@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRUP 3</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h4>GRUP 3</h4>
+          </div>
+          <div class="col-12 col-lg-10 offset-lg-1 my-5">
+            <div class="row">
+              <div class="col-12"><h4>Kişisel Bilgiler</h4></div>
+              <div class="col-12 mb-1"><hr></div>
+                 
+              <form id="formKayit" class="col-12" action="">
+                <div class="row">
+             
+                  <div class="col-12 col-lg-3">
+                    <label
+                      class="fotoLabel"
+                      for="uploadInput"
+                      style="display: block"
+                    >
+                      <span>
+                        <i class="fa-solid fa-camera"></i> Fotoğraf Seç</span
+                      >
+                    </label>
+                    <input
+                      type="file"
+                      id="uploadInput"
+                      accept="image/*"
+                      style="display: none"
+                    />
+                    <img
+                      id="previewImage"
+                      src="#"
+                      alt="Seçilen Fotoğraf"
+                      style="display: none"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-9 my-2">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="isim">İsim*</label>
+                          <input
+                            type="text" pattern="[A-Za-zğüşıöçĞÜŞİÖÇ ]+" title="Geçerli bir isim giriniz." 
+                            class="form-control"
+                            id="isim"
+                            onkeydown="return isAlpha(event)"
+                            onkeypress="return isAlpha(event)"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-12 mt-1">
+                        <div class="form-group">
+                          <label for="soyisim">Soyisim*</label>
+                          <input
+                            type="text" pattern="[A-Za-zğüşıöçĞÜŞİÖÇ ]+" title="Geçerli bir soyisim giriniz." 
+                            class="form-control"
+                            id="soyisim"
+                            onkeydown="return isAlpha(event)"
+                            onkeypress="return isAlpha(event)"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 my-2">
+                    <div class="form-group">
+                      <label for="email">E-posta adresi*</label>
+                      <input 
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="example@example.com" 
+                        required novalidate  pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Email adresiniz  `example@example.com` formatında zorundadır"
+                        oninvalid="this.setCustomValidity('Lütfen geçerli bir e-posta adresi giriniz.')"
+                        onchange="this.setCustomValidity('')"
+                      />
+                      <small id="emailHelp" class="form-text text-muted">Email adresiniz "example@example.com" formatında zorundadır. </small>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 my-2">
+                    <div class="form-group">
+                      <label for="telefon">Telefon Numarası</label>
+                      <input type="number" class="form-control" id="telefon" placeholder="(000) 000 00 00" pattern="\([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2}" title="Geçerli bir numara giriniz" />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-12 my-2">
+                    <div class="form-group">
+                      <label for="adres">Adres</label>
+                      <textarea
+                        class="form-control"
+                        id="adres"
+                        rows="2"
+                      ></textarea>
+                      <small class="form-text text-muted">Adres en fazla 100 karakter olmalıdır</small>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-lg-6 my-2">
+                    <div class="form-group">
+                      <label for="posta">Posta Kodu</label>
+                      <input type="number" class="form-control" id="posta"maxlength="5" />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 my-2">
+                    <div class="form-group">
+                      <label for="sehir">Şehir/İlçe</label>
+                      <select class="form-control" id="sehir"></select>
+                    </div>
+                  </div>
+
+                  <div class="col-12 my-2">
+                    <button class="btn btn-danger btn-block" type="submit">
+                      KAYDET
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="./script.js"></script>
+</html>
